@@ -5,6 +5,7 @@
 
 |       章节（页码）    |      原文     |     修改为     |    出处    |
 | --------------------- |:-------------:| --------------:|-----------:|
+| 第一章 Web框架介绍(P4) | Fackbook | Facebook | @志荣 |
 | 第2章 安装Docker(P11) 头部 |Ubuntu xenial 14.04 (LTS) | Ubuntu Trusty 14.04 (LTS) | @伟忠 |
 | 第2章 插件系统(P17) 头部 | 我们先安装pep-naming | 我们先安装pep8-naming | @tntC4stl3 |
 | 第2章 autoenv(P24) 中间 | echo "source source /home/ubuntu..."| echo "source /home/ubuntu..."| @刘一鹤 |
@@ -26,12 +27,17 @@
 | 第12章 IPython交互模式(P338) 中间 | ... best of 3: 9.2 □s per loop| ... best of 3: 9.2 µs per loop| @Abirdcfly |
 | 第12章 常用的Magic函数(P341) 中间 | ... sys: 4 □s, total: 4 □s| ... sys: 4 µs, total: 4 µs| @Abirdcfly |
 | 第12章 常用的Magic函数(P341) 中间 | ... Wall time: 8.11 □s|... Wall time: 8.11 µs| @Abirdcfly |
+| 第12章 free(P360) 尾部| - buffers/cache表示可用内存 | + buffers/cache表示可用内存 | @hezhiming |
+| 第13章 Python并发编程(P383) 中间 | Referfer | Referer | @志荣 |
+| 第13章 Python并发编程(P384) 头部 | Referfer | Referer | @志荣 |
 | 第13章 使用Gevent(P394) 中间 | def get_random_proxy(cls): | def get_random(cls): | @志荣 |
 | 第13章 使用多进程(P401) 尾部| ... 29.7 □s per loop| ... 29.7 µs per loop| @伟忠 |
 | 第13章 使用多进程(P401) 尾部| ... 44.6 □s per loop| ... 44.6 µs per loop| @伟忠 |
 | 第13章 使用多进程(P402) 头部| ... 44.1 □s per loop| ... 44.1 µs per loop| @伟忠 |
 | 第13章 使用多进程(P402) 头部| ... 86.1 □s per loop| ... 86.1 µs per loop| @伟忠 |
 | 第14章 contextlib(P422) 尾部 | \_\_exit\_ | \_\_exit\_\_ | @伟忠 |
+| 第14章 collections(P428) 尾部| 快速计算的计时器工具 | 快速计算的计数器工具 | @ethan-funny |
+| 第14章 使用CFFI(P444) 尾部| 1. ABI的in-line模式。ABI模式模式不需要... | 1. ABI的in-line模式。ABI模式不需要... | @志荣 |
 
 
 ### 代码错误
@@ -77,7 +83,7 @@
   r.flushall() # 为了测试方便，每次启动后先清理Redis
   ```
 
-3. 第3章 在Flask中使用SQLAlchemy（P72）中间。出处 @tntC4stl3
+3. 第3章 在Flask中使用SQLAlchemy（P71）中间。出处 @tntC4stl3
 
   原文:
 
@@ -96,6 +102,75 @@
     ```
 
     通过修改表名字避免 [Issue #15](https://github.com/dongweiming/web_develop/issues/15) 的错误
+
+4. 第3章 使用表达式（P66）尾部。出处 @tttimit
+
+  原文：
+
+    ```
+    if users.exists():
+        users.drop()
+
+    def execute(s):
+    ```
+
+  修改为：
+
+    ```
+    if users.exists():
+        users.drop()
+    users.create()  # 创建表
+
+    def execute(s):
+    ```
+
+5. 第10章 服务端实现（P295）中间。出处 @志荣
+
+  原文:
+
+  ```
+  @classmethod
+  def create_by_upload_file(cls, uploaded_file):
+      ...
+  return rst
+  ```
+
+  修改为:
+
+  ```
+  @classmethod
+  def create_by_upload_file(cls, uploaded_file):
+      ...
+      return rst
+  ```
+
+6. 第7章 应用部署Fabirc（P193）中间。出处 @志荣
+
+  原文:
+
+  ```
+  from fabric.api import run
+  ```
+
+  修改为:
+
+  ```
+  from fabric.api import run, local
+  ```
+
+7. 第11章 使用Mapreduce（P308）头部。出处 @志荣
+
+  原文:
+
+  ```
+  import import bz2
+  ```
+
+  修改为:
+
+  ```
+  import bz2
+  ```
 
 ### 文件权限
 
